@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>SUAYA Awards</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Outfit',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f7f4ee;
+  color:#111827;
+  overflow-x:hidden;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:999;
+  padding:22px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(7,14,27,0.72);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+  color:white;
+  font-size:34px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#d4af37;
+}
+
+.nav-links{
+  display:flex;
+  gap:35px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:white;
+  font-size:15px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#d4af37;
+}
+
+.nav-btn{
+  padding:14px 28px;
+  border:none;
+  border-radius:14px;
+  background:#d4af37;
+  color:#111;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.nav-btn:hover{
+  transform:translateY(-3px);
+}
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* ===================================
+   CAROUSEL
+=================================== */
+
+.hero-slider{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity 1.4s ease-in-out;
+  background-size:cover !important;
+  background-position:center !important;
+}
+
+.slide.active{
+  opacity:1;
+}
+
+/* Overlay */
+.slide::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    rgba(5,10,20,0.55),
+    rgba(5,10,20,0.72)
+  );
+}
+
+/* ===================================
+   HERO CONTENT
+=================================== */
+
+.hero-content{
+  position:relative;
+  z-index:5;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero-badge{
+  padding:10px 24px;
+  border-radius:40px;
+  background:rgba(212,175,55,0.12);
+  border:1px solid rgba(212,175,55,0.35);
+  color:#f4d37c;
+  font-size:10px;
+  margin-bottom:28px;
+  backdrop-filter:blur(10px);
+}
+
+.hero-content h1{
+  font-size:88px;
+  line-height:1;
+  color:white;
+  font-weight:900;
+  max-width:1100px;
+}
+
+.hero-content h1 span{
+  color:#d4af37;
+}
+
+.hero-content p{
+  margin-top:28px;
+  max-width:860px;
+  color:#e5e7eb;
+  line-height:1.8;
+  font-size:20px;
+}
+
+.hero-content p span{
+  color:#d4af37;
+  font-weight:600;
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.hero-buttons{
+  margin-top:40px;
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.primary-btn,
+.secondary-btn{
+  padding:16px 34px;
+  border-radius:14px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.primary-btn{
+  border:none;
+  background:#d4af37;
+  color:#111;
+}
+
+.secondary-btn{
+  border:1px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.08);
+  color:white;
+  backdrop-filter:blur(8px);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+  transform:translateY(-4px);
+}
+
+/* ===================================
+   CATEGORY PILLS
+=================================== */
+
+.category-pills{
+  margin-top:45px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  justify-content:center;
+  max-width:1000px;
+}
+
+.pill{
+  padding:12px 20px;
+  border-radius:40px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+  color:white;
+  font-size:14px;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.pill:hover{
+  background:#d4af37;
+  color:#111;
+  transform:translateY(-2px);
+}
+
+/* ===================================
+   SECTION GLOBAL
+=================================== */
+
+section{
+  padding:120px 8%;
+}
+
+.section-tag{
+  display:inline-block;
+  padding:9px 18px;
+  border-radius:40px;
+  background:rgba(212,175,55,0.08);
+  border:1px solid rgba(212,175,55,0.25);
+  color:#b88a00;
+  margin-bottom:20px;
+  font-size:13px;
+}
+
+.section-title{
+  font-size:60px;
+  line-height:1.1;
+  color:#0f172a;
+  margin-bottom:20px;
+  font-weight:900;
+}
+
+.section-title span{
+  color:#d4af37;
+}
+
+.section-text{
+  max-width:760px;
+  color:#64748b;
+  line-height:1.9;
+  font-size:18px;
+}
+/* =================================
+   COUNTDOWN
+================================= */
+
+.countdown-wrapper{
+  margin-top:60px;
+}
+
+.countdown-title{
+  font-size:12px;
+  letter-spacing:3px;
+  color:#d3d8e0;
+  margin-bottom:18px;
+}
+
+.countdown{
+  display:flex;
+  gap:35px;
+  flex-wrap:wrap;
+  
+}
+.time-box{
+  display:flex;
+  flex-direction:column;
+}
+
+.time-box h2{
+  font-size:75px;
+  line-height:1;
+  color:#cc9f53;
+  font-weight:800;
+}
+
+.time-box p{
+  font-size:20px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#ffffff;
+  margin-top:6px;
+}
+
+/* =========================
+   STATS STRIP
+========================= */
+
+.stats-strip{
+  background:#0b0b0b;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  padding:60px 8%;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.stat-box{
+  text-align:center;
+}
+
+.stat-box h2{
+  font-size:52px;
+  color:#d4af37;
+  margin-bottom:10px;
+}
+
+.stat-box p{
+  color:#d1d5db;
+  font-size:18px;
+}
+
+/* ===================================
+   IMPACT SECTION
+=================================== */
+
+.impact{
+  background:white;
+}
+
+.impact-grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:24px;
+}
+
+.impact-card{
+  background:#f8fafc;
+  border-radius:24px;
+  padding:40px 30px;
+  border:1px solid #e2e8f0;
+  transition:0.3s;
+}
+
+.impact-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.06);
+}
+
+.impact-card h2{
+  font-size:54px;
+  color:#d4af37;
+  margin-bottom:12px;
+}
+
+.impact-card p{
+  color:#475569;
+  line-height:1.8;
+}
+
+/* ===================================
+   FEATURE STORY
+=================================== */
+
+.story{
+  background:#0f172a;
+  color:white;
+}
+
+.story-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.story-image img{
+  height:650px;
+  object-fit:cover;
+  border-radius:28px;
+}
+
+.story-content h5{
+  color:#d4af37;
+  letter-spacing:2px;
+  margin-bottom:18px;
+}
+
+.story-content h2{
+  font-size:68px;
+  line-height:1.05;
+  margin-bottom:24px;
+}
+
+.story-content p{
+  color:#cbd5e1;
+  line-height:1.9;
+  margin-bottom:22px;
+}
+
+.quote{
+  padding:26px;
+  border-left:4px solid #d4af37;
+  background:rgba(255,255,255,0.05);
+  border-radius:14px;
+  margin-top:25px;
+  color:#f1f5f9;
+  line-height:1.8;
+}
+
+/* ===================================
+   WINNERS
+=================================== */
+
+.winners{
+  display:block;
+   margin-top:70px;
+  background:#f7f4ee;
+  text-align:left;
+}
+
+.winner-buttons{
+  display:flex;
+  justify-content:left;
+  gap:16px;
+  margin-bottom:40px;
+  flex-wrap:wrap;
+}
+
+.winner-btn{
+  padding:15px 28px;
+  border-radius:12px;
+  border:none;
+  background:white;
+  border:1px solid #ddd;
+  cursor:pointer;
+  font-weight:700;
+  transition:0.3s;
+}
+
+.winner-btn.active{
+  background:#d4af37;
+  color:#111;
+}
+
+.winner-grid{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:28px;
+}
+
+.winner-card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid #e5e7eb;
+  transition:0.3s;
+}
+
+.winner-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.winner-card img{
+  height:400px;
+  object-fit:cover;
+}
+
+.winner-content{
+  padding:28px;
+  text-align:left;
+}
+
+.winner-content h3{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.winner-content p{
+  color:#b88a00;
+}
+
+
+    /* =================================
+       Categories section
+    ================================= */
+/* =================================
+   CATEGORIES SECTION
+================================= */
+
+.categories{
+  width:100%;
+  padding:130px 5%;
+  background:
+  linear-gradient(to bottom,#fff,#f8f5ef);
+  text-align:left;
+  position:relative;
+  overflow:hidden;
+}
+
+/* GOLD GLOW */
+
+.categories::before{
+  content:'';
+  position:absolute;
+  width:700px;
+  height:700px;
+  background:radial-gradient(
+    circle,
+    rgba(212,175,55,0.10),
+    transparent 70%
+  );
+  top:-250px;
+  right:-200px;
+  z-index:0;
+}
+
+.categories .section-badge{
+  position:relative;
+  z-index:2;
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:40px;
+  background:rgba(212,175,55,0.10);
+  border:1px solid rgba(212,175,55,0.25);
+  color:#b8860b;
+  font-size:14px;
+  margin-bottom:22px;
+  letter-spacing:0.5px;
+}
+
+.categories h2{
+  position:relative;
+  z-index:2;
+  font-size:64px;
+  line-height:1.1;
+  font-weight:900;
+  color:#0f172a;
+  margin-bottom:70px;
+}
+
+.categories h2 span{
+  color:#d4af37;
+}
+
+/* GRID */
+
+.categories-grid{
+  position:relative;
+  z-index:2;
+ width:100%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
+   justify-content:start;
+  align-items:start;
+}
+
+/* CARD */
+
+.categories-card{
+  position:relative;
+  background:rgba(255,255,255,0.72);
+  border:1px solid rgba(255,255,255,0.4);
+  backdrop-filter:blur(14px);
+  border-radius:28px;
+  padding:35px 30px;
+  text-align:left;
+  transition:0.4s ease;
+  overflow:hidden;
+  min-height:300px;
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.04);
+}
+
+/* TOP GOLD LINE */
+
+.categories-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:5px;
+  background:linear-gradient(
+    to right,
+    #d4af37,
+    #f4d37c
+  );
+}
+
+/* HOVER */
+
+.categories-card:hover{
+  transform:translateY(-10px);
+  box-shadow:
+  0 20px 50px rgba(0,0,0,0.10);
+  border-color:rgba(212,175,55,0.35);
+}
+
+/* ICON */
+
+.categories-icon{
+  width:74px;
+  height:74px;
+  border-radius:22px;
+  background:
+  linear-gradient(
+    135deg,
+    rgba(212,175,55,0.18),
+    rgba(212,175,55,0.06)
+  );
+  border:1px solid rgba(212,175,55,0.25);
+  display:flex;
+  justify-content:left;
+  align-items:left;
+  font-size:34px;
+  margin-bottom:24px;
+  color:#d4af37;
+  box-shadow:
+  0 10px 25px rgba(212,175,55,0.15);
+}
+
+/* TITLE */
+
+.categories-card h3{
+  font-size:24px;
+  color:#0f172a;
+  font-weight:800;
+  margin-bottom:16px;
+  line-height:1.3;
+}
+
+/* TEXT */
+
+.categories-card p{
+  color:#64748b;
+  line-height:1.9;
+  font-size:15px;
+}
+
+/* FOOTER */
+
+.categories-footer{
+  margin-top:50px;
+  color:#b8860b;
+  font-size:15px;
+  font-weight:600;
+}
+
+/* BUTTON */
+
+.btn-primary{
+  display: block;
+   margin:0 auto 50px;
+  padding:18px 36px;
+  border:none;
+  border-radius:16px;
+  background:rgb(254, 202, 13);
+  color:#111;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:
+  0 10px 25px rgba(212,175,55,0.25);
+}
+
+.btn-primary:hover{
+  transform:translateY(-4px);
+  box-shadow:
+  0 18px 35px rgba(212,175,55,0.35);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .categories h2{
+    font-size:48px;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .categories{
+    padding:100px 6%;
+  }
+
+  .categories h2{
+    font-size:38px;
+  }
+
+  .categories-grid{
+    grid-template-columns:1fr;
+  }
+
+  .categories-card{
+    min-height:auto;
+  }
+
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+  background:#0b3a75;
+  padding:80px 8% 40px;
+  color:white;
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:50px;
+  margin-bottom:60px;
+}
+
+.footer-logo{
+  font-size:42px;
+  font-weight:900;
+  margin-bottom:18px;
+}
+
+.footer-logo span{
+  color:#d4af37;
+}
+
+.footer-text{
+  color:#dbeafe;
+  line-height:1.9;
+  max-width:450px;
+}
+
+.footer-links h4{
+  margin-bottom:18px;
+  color:#d4af37;
+}
+
+.footer-links a{
+  display:block;
+  color:#dbeafe;
+  margin-bottom:12px;
+  transition:0.3s;
+}
+
+.footer-links a:hover{
+  color:#d4af37;
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:28px;
+  text-align:center;
+  color:#dbeafe;
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:1000px){
+
+  .hero-content h1{
+    font-size:60px;
+  }
+
+  .story-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .story-content h2{
+    font-size:50px;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:700px){
+
+  nav{
+    padding:18px 6%;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero-content h1{
+    font-size:42px;
+  }
+
+  .hero-content p{
+    font-size:16px;
+  }
+
+  .section-title{
+    font-size:42px;
+  }
+
+  .story-content h2{
+    font-size:40px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===================================
+     NAVBAR
+=================================== -->
+
+<nav>
+
+  <div class="logo">
+    SUAYA<span>.<div class="hero-badge">
+       STRATHMORE UNIVERSITY ALUMNI OF THE YEAR AWARDS
+    </div></span>
+        
+
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Stories</a></li>
+    <li><a href="#">Winners</a></li>
+    <li><a href="#">Impact</a></li>
+  </ul>
+
+  <button class="nav-btn">
+    Explore Stories
+  </button>
+
+</nav>
+
+<!-- ===================================
+     HERO
+=================================== -->
+
+<section class="hero">
+
+  <!-- CAROUSEL -->
+  <div class="hero-slider">
+
+    <!-- EDUCATION -->
+    <div class="slide active"
+      style="background-image:url('https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1974&auto=format&fit=crop');">
+    </div>
+
+    <!-- HEALTH -->
+    <div class="slide"
+      style="background-image:url('https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1974&auto=format&fit=crop');">
+    </div>
+
+    <!-- TECH -->
+    <div class="slide"
+      style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop');">
+    </div>
+
+    <!-- ENTREPRENEURSHIP -->
+    <div class="slide"
+      style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop');">
+    </div>
+
+    <!-- LEADERSHIP -->
+    <div class="slide"
+      style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1974&auto=format&fit=crop');">
+    </div>
+
+  </div>
+
+  <!-- HERO CONTENT -->
+  <div class="hero-content">
+
+    <div class="hero-badge">
+       STRATHMORE UNIVERSITY ALUMNI OF THE YEAR AWARDS
+    </div>
+
+    <h1>
+      Celebrating <span>African Impact</span><br>
+      Through Leadership & Innovation
+    </h1>
+
+    <p>
+      Honoring African alumni transforming communities through
+      <span>Leadership</span>,
+      <span>Entrepreneurship</span>,
+      <span>Research</span>,
+      <span>Innovation</span>,
+      <span>Sports</span>,
+      and <span>Creativity</span>.
+    </p>
+
+    <div class="hero-buttons">
+
+      <button class="primary-btn">
+        2025 Winners
+      </button>
+
+      <button class="secondary-btn">
+        Explore Categories
+      </button>
+
+    </div>
+
+    <div class="category-pills">
+
+      <div class="pill">Leadership</div>
+      <div class="pill">Entrepreneurship</div>
+      <div class="pill">Research & Innovation</div>
+      <div class="pill">Public Leadership</div>
+      <div class="pill">Sports</div>
+      <div class="pill">Creativity</div>
+
+    </div>
+ 
+      <!-- COUNTDOWN -->
+
+      <div class="countdown-wrapper">
+
+        <p class="countdown-title">
+          COUNTDOWN TO THE AWARDS
+        </p>
+
+        <div class="countdown">
+
+          <div class="time-box">
+            <h2>00</h2>
+            <p>DAYS</p>
+          </div>
+
+          <div class="time-box">
+            <h2>00</h2>
+            <p>HOURS</p>
+          </div>
+
+          <div class="time-box">
+            <h2>00</h2>
+            <p>MINUTES</p>
+          </div>
+
+          <div class="time-box">
+            <h2>00</h2>
+            <p>SECONDS</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+  </div>
+
+</section>
+  
+ 
+<!-- STATISTICS -->
+
+<section class="stats-strip">
+
+  <div class="stat-box">
+
+    <h2>15+</h2>
+    <p>Award Categories</p>
+
+  </div>
+
+  <div class="stat-box">
+
+    <h2>50+</h2>
+    <p>Nominees Recognized</p>
+
+  </div>
+
+  <div class="stat-box">
+
+    <h2>6</h2>
+    <p>Winners Honored</p>
+
+  </div>
+
+  <div class="stat-box">
+
+    <h2>1000+</h2>
+    <p>Community Impact</p>
+
+  </div>
+
+</section>
+
+<!-- ===================================
+     IMPACT
+=================================== -->
+
+<section class="impact">
+
+  <div class="section-tag">
+    IMPACT ACROSS AFRICA
+  </div>
+
+  <h2 class="section-title">
+    Creating <span>Real Change</span>
+  </h2>
+
+  <p class="section-text">
+    SUAYA celebrates alumni building African solutions in education,
+    healthcare, leadership, infrastructure, technology and entrepreneurship.
+  </p>
+
+  <div class="impact-grid">
+
+    <div class="impact-card">
+      <h2>100K+</h2>
+      <p>Youth mentored across schools and universities.</p>
+    </div>
+
+    <div class="impact-card">
+      <h2>40+</h2>
+      <p>Communities transformed through leadership initiatives.</p>
+    </div>
+
+    <div class="impact-card">
+      <h2>21</h2>
+      <p>Innovation ventures impacting Africa’s future.</p>
+    </div>
+
+    <div class="impact-card">
+      <h2>80K+</h2>
+      <p>Entrepreneurs empowered through mentorship programs.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===================================
+     STORY
+=================================== -->
+
+<section class="story">
+
+  <div class="story-wrapper">
+
+    <div class="story-image">
+
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1974&auto=format&fit=crop">
+
+    </div>
+
+    <div class="story-content">
+
+      <h5>FEATURED STORY</h5>
+
+      <h2>
+        Leadership That Inspires Africa
+      </h2>
+
+      <p>
+        From schools to hospitals, startups to public service,
+        SUAYA winners represent a new generation of African excellence.
+      </p>
+
+      <p>
+        Every award celebrates impact, innovation,
+        resilience, and service to society.
+      </p>
+
+      <div class="quote">
+        “The future of Africa is built by leaders who transform lives.”
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===================================
+     WINNERS
+=================================== -->
+
+<section class="winners">
+
+  <div class="winner-buttons">
+
+    <button class="winner-btn active">
+      2025 Winners
+    </button>
+
+    <button class="winner-btn">
+      2024 Winners
+    </button>
+
+  </div>
+
+  <div class="section-tag">
+     HONORING EXCELLENCE
+  </div>
+
+  <h2 class="section-title">
+    Alumni Creating <span>Lasting Impact</span>
+  </h2>
+
+  <p class="section-text">
+    Meet leaders, innovators and changemakers shaping Africa’s future.
+  </p>
+
+  <div class="winner-grid">
+
+    <div class="winner-card">
+
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="winner-content">
+        <h3>Michael Babu</h3>
+        <p>Community Leadership Award</p>
+      </div>
+
+    </div>
+
+    <div class="winner-card">
+
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="winner-content">
+        <h3>Prudence Mukami</h3>
+        <p>Research & Innovation</p>
+      </div>
+
+    </div>
+
+    <div class="winner-card">
+
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="winner-content">
+        <h3>Bernard Chiira</h3>
+        <p>Entrepreneurship Award</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+ <!-- categories SECTION -->
+
+  <section class="categories">
+
+    <div class="section-badge">
+      ✨ All round alumni excellence
+    </div>
+
+    <h2>
+      Categories We <span>Celebrate</span>
+    </h2>
+
+
+    <div class="categories-grid">
+
+      <div class="categories-card">
+        <div class="categories-icon">💻</div>
+        <h3>Public Service</h3>
+            <p>
+            Alumni dedicated to serving the public with integrity, leadership, and a commitment to societal well-being in government or any public office.
+      </p>
+      </div>
+
+      <div class="categories-card">
+        <div class="categories-icon">💳</div>
+        <h3>Leadership</h3>
+            <p>
+            Trailblazers in corporate leadership who exemplify ethical leadership, exceptional performance, and categories influence.
+      </p>
+      </div>
+
+      <div class="categories-card">
+        <div class="categories-icon">🏢</div>
+        <h3>Research and Innovation</h3>
+            <p>
+            Pioneers in research and innovation driving technological advancements and transformative solutions across categories.
+      </p>
+      </div>
+
+      <div class="categories-card">
+        <div class="categories-icon">🩺</div>
+        <h3>Community Service</h3>
+            <p>
+            Alumni making a significant impact through community service, philanthropy, and social initiatives that uplift and empower communities.
+      </div>
+
+      <div class="categories-card">
+        <div class="categories-icon">🎓</div>
+        <h3>Entrepreneurship </h3>   
+            <p>
+            Visionary entrepreneurs who have founded successful ventures, created jobs, and contributed to economic growth and innovation.
+      </div>
+
+
+      <div class="categories-card">
+        <div class="categories-icon">🎨</div>
+        <h3>Sports & Arts  </h3>
+            <p>
+            Alumni excelling in sports and arts, showcasing talent, creativity, and dedication that inspire and enrich society.
+      </div>
+
+    </div>
+
+    <p class="categories-footer">
+  
+    </p>
+
+      </section>
+
+<button class="btn btn-primary">
+      Terms and Conditions
+    </button>
+
+<!-- ===================================
+     FOOTER
+=================================== -->
+
+<footer>
+
+  <div class="footer-top">
+
+    <div>
+
+      <div class="footer-logo">
+        SUAYA<span>.</span>
+      </div>
+
+      <p class="footer-text">
+        Celebrating African alumni transforming communities through leadership,
+        innovation, entrepreneurship and service.
+      </p>
+
+    </div>
+
+    <div class="footer-links">
+
+      <h4>Quick Links</h4>
+
+      <a href="#">Home</a>
+      <a href="#">Stories</a>
+      <a href="#">Winners</a>
+      <a href="#">Contact</a>
+
+    </div>
+
+    <div class="footer-links">
+
+      <h4>Explore</h4>
+
+      <a href="#">Awards</a>
+      <a href="#">Nominees</a>
+      <a href="#">Gallery</a>
+      <a href="#">Videos</a>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 SUAYA Awards • Designed for African Excellence
+  </div>
+
+</footer>
+
+<!-- ===================================
+     CAROUSEL SCRIPT
+=================================== -->
+
+<script>
+
+const slides = document.querySelectorAll('.slide');
+
+let currentSlide = 0;
+
+function showSlide(index){
+
+  slides.forEach((slide)=>{
+    slide.classList.remove('active');
+  });
+
+  slides[index].classList.add('active');
+
+}
+
+setInterval(()=>{
+
+  currentSlide++;
+
+  if(currentSlide >= slides.length){
+    currentSlide = 0;
+  }
+
+  showSlide(currentSlide);
+
+},3000);
+
+</script>
+
+</body>
+</html>

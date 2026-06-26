@@ -1,0 +1,687 @@
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+    display:grid;
+    align-items:center;
+    padding:0 8%;
+    background:#081120;
+}
+
+/* ==========================
+   BACKGROUND IMAGE
+========================== */
+
+.hero-image{
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height:100%;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ==========================
+   OVERLAY
+========================== */
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(8,17,32,1) 0%,
+        rgba(8,17,32,0.95) 20%,
+        rgba(8,17,32,0.75) 40%,
+        rgba(8,17,32,0.35) 65%,
+        rgba(8,17,32,0.2) 100%
+    );
+
+    z-index:1;
+}
+
+/* ==========================
+   HERO CONTENT
+========================== */
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:800px;
+}
+
+.hero-tag{
+    margin-top:25px;
+    display:inline-block;
+    color:#ad0000;
+    font-weight:900;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:2px;
+}
+
+.hero-title{
+    font-size:70px;
+    line-height:1.1;
+    color:white;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+.hero-description{
+    color:#d1d5db;
+    font-size:1.2rem;
+    line-height:1.8;
+    max-width:650px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    margin-top:20px;
+}
+
+.btn-primary{
+    background:#c72404;
+    color:#ffffff;
+    padding:16px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:750;
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,0.3);
+    color:white;
+    padding:16px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    backdrop-filter:blur(10px);
+}
+
+/* ==========================
+   FLOATING CARDS
+========================== */
+
+.floating-card{
+    position:absolute;
+    z-index:3;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    padding:15px 25px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-weight:600;
+}
+
+.card-1{
+    top:25%;
+    right:14%;
+}
+
+.card-2{
+    top:40%;
+    right:7%;
+}
+
+.card-3{
+    top:55%;
+    right:7%;
+}
+.card-4{
+    top:68%;
+    right:14%;
+}
+
+/* ==========================
+   STATS BAR
+========================== */
+
+.hero-stats{
+    position:absolute;
+
+
+    bottom:15px;
+    left:50%;
+
+    transform:translateX(-50%);
+    height:100px;
+    
+    width:85%;
+    max-width:1900px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    z-index:2;
+
+    background:rgba(255, 255, 255, 0.228);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:25px;
+    
+    padding:30px;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat h2{
+    color:#7b0808;
+    font-size:2rem;
+}
+
+.stat p{
+    color:white;
+    margin-top:15px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:1000px){
+
+    .hero-image{
+        width:100%;
+    }
+
+    .hero-title{
+        font-size:3.5rem;
+    }
+
+    .hero-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero{
+        padding:100px 25px;
+        height:auto;
+        min-height:100vh;
+    }
+
+    .hero-title{
+        font-size:2.8rem;
+    }
+
+    .hero-description{
+        font-size:1rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .floating-card{
+        display:none;
+    }
+
+    .hero-stats{
+        position:relative;
+        margin-top:60px;
+        left:auto;
+        bottom:auto;
+        transform:none;
+        width:100%;
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================
+   STUDENT JOURNEY
+========================= */
+
+.journey-section{
+    padding:120px 5px;
+    background:#ffffff;
+}
+
+.section-header{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 80px;
+}
+
+.section-tag{
+    color:#071ac2;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.section-title{
+    font-size:3rem;
+    margin:20px 0;
+    color:#081120;
+}
+
+.section-text{
+    color:#1661c9;
+    line-height:1.8;
+}
+
+.journey-timeline{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:25px;
+    padding:0 5%;
+}
+
+.journey-step{
+    position:relative;
+    background:white;
+    border:1px solid #749ed4;
+    border-radius:25px;
+    padding:35px 25px;
+    text-align:center;
+    transition:.4s;
+}
+
+.journey-step:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.journey-icon{
+    width:70px;
+    height:70px;
+    margin:auto;
+    margin-bottom:20px;
+    border-radius:50%;
+    background:#fff8e6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+.journey-step h3{
+    color:#1b59f4;
+    margin-bottom:10px;
+}
+
+.journey-step h4{
+    margin-bottom:15px;
+    color:#081120;
+}
+
+.journey-step p{
+    color:#3a3a3a;
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* ==========================
+   ABOUT STP
+========================== */
+
+.about-stp{
+    padding:120px 5%;
+    background:#f8fafc;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-description{
+    color:#64748b;
+    line-height:2;
+    margin:25px 0;
+}
+
+.mission-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    border-left:5px solid #997500;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.mission-box h4{
+    margin-bottom:10px;
+    color:#081120;
+}
+
+.mission-box p{
+    color:#64748b;
+}
+
+/* IMAGES */
+
+.about-images{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.about-images img{
+    width:100%;
+    border-radius:25px;
+    object-fit:cover;
+}
+
+.about-images img:first-child{
+    grid-column:span 2;
+    height:320px;
+}
+
+.about-images img:nth-child(2),
+.about-images img:nth-child(3){
+    height:220px;
+}
+
+/* QUOTE */
+
+.about-quote{
+    margin-top:80px;
+    text-align:center;
+    font-size:2rem;
+    font-weight:700;
+    color:#081120;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* STATS */
+
+.about-stats{
+    margin-top:70px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+}
+
+.about-stat{
+    text-align:center;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.about-stat h3{
+    color:#000ea8;
+    font-size:2.5rem;
+}
+
+.about-stat p{
+    color:#154fa0;
+    margin-top:10px;
+}
+
+/* ==========================
+   PROGRAMS SECTION
+========================== */
+
+.programs-section{
+    padding:120px 0;
+    background:white;
+}
+
+.programs-grid{
+    margin-top:70px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+}
+
+/* CARD */
+
+.program-card{
+    position:relative;
+
+    height:450px;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    cursor:pointer;
+}
+
+/* IMAGE */
+
+.program-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.6s;
+}
+
+/* OVERLAY */
+
+.program-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.2)
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:40px;
+
+    color:white;
+}
+
+/* ICON */
+
+.program-icon{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+/* TITLE */
+
+.program-overlay h3{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+/* TEXT */
+
+.program-overlay p{
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+/* HOVER */
+
+.program-card:hover img{
+    transform:scale(1.1);
+}
+
+/* GOLD BORDER */
+
+.program-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border:2px solid transparent;
+
+    border-radius:30px;
+
+    z-index:5;
+
+    transition:.4s;
+}
+
+.program-card:hover::before{
+
+    border-color:#350fdd;
+}
+
+.highlight-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+margin-bottom:120px;
+align-items:center;
+}
+
+.reverse{
+direction:rtl;
+}
+
+.highlight-images{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.highlight-images img{
+height:300px;
+width:100%;
+object-fit:cover;
+border-radius:25px;
+}
+
+.impact-section{
+padding:120px 0;
+background:#104195;
+}
+
+.impact-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.impact-card{
+text-align:center;
+padding:50px;
+border-radius:25px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+}
+
+.impact-card h2{
+font-size:4rem;
+color:#170486;
+}
+.voices-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.voice-card{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.voice-card img{
+width:80px;
+height:80px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:20px;
+}
+.alumni-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.alumni-cards{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.alumni-card{
+padding:40px;
+background:white;
+border-radius:25px;
+font-weight:700;
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.masonry{
+columns:4;
+column-gap:15px;
+}
+
+.masonry img{
+width:100%;
+margin-bottom:15px;
+border-radius:20px;
+display:block;
+}
+.cta-section{
+position:relative;
+padding:10px 20px;
+text-align:center;
+background-color: #1661c9;
+
+}
+
+
+footer{
+background-color: #b5b4b4;
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+.contact a{
+    color:rgb(0, 0, 0);
+}

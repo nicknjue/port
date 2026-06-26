@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUAYA Awards</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f8f8f8;
+      color:blue;
+    }
+/* =================================
+   HERO SECTION
+================================= */
+
+.hero{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  color:white;
+  isolation:isolate;
+
+  background:
+  url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1974&auto=format&fit=crop')
+  center center/cover no-repeat;
+}
+
+/* GOLD GLOW */
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:850px;
+  height:850px;
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(204,159,83,0.22),
+    transparent 70%
+  );
+
+  top:-250px;
+  right:-250px;
+  z-index:1;
+}
+
+/* DARK OVERLAY */
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(7,16,29,0.96) 10%,
+    rgba(7,16,29,0.88) 45%,
+    rgba(7,16,29,0.55) 100%
+  );
+
+  z-index:2;
+}
+
+/* =================================
+   NAVBAR
+================================= */
+
+nav{
+  width:100%;
+  padding:24px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:100;
+}
+
+.logo{
+  font-size:34px;
+  font-weight:900;
+  color:white;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#cc9f53;
+}
+
+.nav-links{
+  display:flex;
+  gap:35px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-size:15px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#cc9f53;
+}
+
+.vote-btn{
+  background:#cc9f53;
+  color:#07101d;
+  border:none;
+  padding:14px 30px;
+  border-radius:12px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.vote-btn:hover{
+  transform:translateY(-3px);
+}
+
+/* =================================
+   HERO CONTENT
+================================= */
+
+.hero-content{
+  position:relative;
+  z-index:20;
+
+  min-height:calc(100vh - 90px);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+
+  text-align:left;
+
+  max-width:900px;
+
+  padding:0 7%;
+}
+
+/* SMALL LABEL */
+
+.date-pill{
+  padding:10px 22px;
+  border-radius:50px;
+
+  background:rgba(204,159,83,0.08);
+
+  border:1px solid rgba(204,159,83,0.25);
+
+  color:#cc9f53;
+
+  font-size:13px;
+  letter-spacing:1px;
+
+  margin-bottom:28px;
+
+  backdrop-filter:blur(12px);
+}
+
+/* TITLE */
+
+.hero-title{
+  font-size:78px;
+  line-height:0.95;
+  font-weight:900;
+
+  color:white;
+}
+
+.hero-subtitle{
+  font-size:42px;
+  font-weight:700;
+
+  color:#cc9f53;
+
+  margin-top:10px;
+}
+
+/* TEXT */
+
+.hero-text{
+  margin-top:24px;
+
+  max-width:720px;
+
+  font-size:20px;
+  line-height:1.8;
+
+  color:#d1d5db;
+}
+
+.hero-text span{
+  color:#cc9f53;
+  font-weight:600;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:35px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 34px;
+  border-radius:12px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn-primary{
+  border:none;
+  background:#cc9f53;
+  color:#07101d;
+}
+
+.btn-secondary{
+  background:transparent;
+  color:white;
+  border:1px solid rgba(255,255,255,0.25);
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+}
+
+/* =================================
+   COUNTDOWN
+================================= */
+
+.countdown-wrapper{
+  margin-top:60px;
+}
+
+.countdown-title{
+  font-size:12px;
+  letter-spacing:3px;
+  color:#d3d8e0;
+  margin-bottom:18px;
+}
+
+.countdown{
+  display:flex;
+  gap:35px;
+  flex-wrap:wrap;
+  
+}
+
+.time-box{
+  display:flex;
+  flex-direction:column;
+}
+
+.time-box h2{
+  font-size:75px;
+  line-height:1;
+  color:#cc9f53;
+  font-weight:800;
+}
+
+.time-box p{
+  font-size:20px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#ffffff;
+  margin-top:6px;
+}
+
+/* =================================
+   IMPACT STRIP
+================================= */
+
+.stats{
+  margin-top:60px;
+
+  display:flex;
+  gap:60px;
+
+  padding-top:30px;
+
+  border-top:1px solid rgba(255,255,255,0.08);
+
+  flex-wrap:wrap;
+}
+
+.stat h2{
+  font-size:42px;
+  color:#cc9f53;
+  font-weight:800;
+}
+
+.stat p{
+  margin-top:8px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#cbd5e1;
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media(max-width:992px){
+
+  .hero-title{
+    font-size:58px;
+  }
+
+  .hero-subtitle{
+    font-size:34px;
+  }
+
+  .hero-text{
+    font-size:18px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  nav{
+    padding:20px 6%;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero-content{
+    padding:0 6%;
+  }
+
+  .hero-title{
+    font-size:44px;
+  }
+
+  .hero-subtitle{
+    font-size:28px;
+  }
+
+  .hero-text{
+    font-size:16px;
+  }
+
+  .countdown{
+    gap:22px;
+  }
+
+  .time-box h2{
+    font-size:42px;
+  }
+
+  .stats{
+    gap:30px;
+  }
+
+  .stat h2{
+    font-size:30px;
+  }
+
+}
+    /* =================================
+       ABOUT SECTION
+    ================================= */
+
+    .about-section{
+      width:100%;
+      padding:120px 8%;
+      text-align:center;
+      background:#f8f8f8;
+    }
+
+    .section-tag,
+    .section-badge{
+      display:inline-block;
+      padding:8px 18px;
+      border-radius:40px;
+      border:1px solid rgba(255,190,11,0.3);
+      background:rgba(255,190,11,0.08);
+      color:#d89b00;
+      font-size:13px;
+      margin-bottom:25px;
+    }
+
+    .about-title,
+    .industries h2{
+      font-size:58px;
+      font-weight:800;
+      line-height:1.2;
+      margin-bottom:18px;
+    }
+
+    .about-title span,
+    .industries h2 span{
+      color:#cc9f53;
+    }
+
+    .about-text,
+    .industries-text{
+      max-width:760px;
+      margin:0 auto 65px;
+      color:#666;
+      line-height:1.8;
+      font-size:17px;
+    }
+
+    /* ABOUT CARDS */
+
+    .about-cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:25px;
+      margin-bottom:55px;
+    }
+
+    .about-card{
+      background:white;
+      border:1px solid #e8e8e8;
+      border-radius:20px;
+      padding:35px 28px;
+      text-align:left;
+      transition:0.3s;
+    }
+
+    .about-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .icon-box{
+      width:55px;
+      height:55px;
+      background:#cc9f53;
+      border-radius:14px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:24px;
+      margin-bottom:25px;
+    }
+
+    .about-card h3{
+      margin-bottom:15px;
+      font-size:22px;
+    }
+
+    .about-card p{
+      color:#666;
+      line-height:1.7;
+      font-size:15px;
+    }
+
+/* =========================
+   WINNERS SECTION
+========================= */
+
+.winners-section{
+  width:100%;
+  padding:120px 8%;
+  background:#f8f8f8;
+  text-align:center;
+}
+
+/* YEAR BUTTONS */
+
+.winner-top-buttons{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-bottom:40px;
+  flex-wrap:wrap;
+}
+
+.winner-year-btn{
+  padding:14px 28px;
+  border:none;
+  border-radius:12px;
+  background:white;
+  border:1px solid #e4e4e4;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.winner-year-btn:hover{
+  transform:translateY(-3px);
+  border-color:#ffbe0b;
+}
+
+.winner-year-btn.active{
+  background:#ffbe0b;
+  color:#000;
+}
+
+/* TITLE */
+
+.winners-title{
+  font-size:58px;
+  font-weight:800;
+  color:#111;
+  margin-bottom:18px;
+}
+
+.winners-title span{
+  color:#ffbe0b;
+}
+
+.winners-text{
+  max-width:750px;
+  margin:0 auto 70px;
+  color:#666;
+  line-height:1.8;
+  font-size:17px;
+}
+
+/* GRID */
+
+.winners-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px;
+}
+
+/* CARD */
+
+.winner-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid #ececec;
+  transition:0.3s ease;
+}
+
+.winner-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+
+.winner-image{
+  width:100%;
+  height:280px;
+  overflow:hidden;
+}
+
+.winner-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.winner-card:hover img{
+  transform:scale(1.06);
+}
+
+/* CONTENT */
+
+.winner-content{
+  padding:24px;
+  text-align:center;
+}
+
+.winner-content h3{
+  font-size:22px;
+  color:#111;
+  margin-bottom:10px;
+}
+
+.winner-content p{
+  color:#d89b00;
+  font-size:15px;
+  font-weight:500;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .winners-title{
+    font-size:40px;
+  }
+
+  .winners-text{
+    font-size:15px;
+  }
+
+}
+
+
+    /* =================================
+       INDUSTRIES SECTION
+    ================================= */
+
+    .industries{
+      width:100%;
+      padding:110px 8%;
+      background:#fff;
+      text-align:center;
+    }
+
+    .industry-grid{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+      gap:16px;
+    }
+
+    .industry-card{
+      background:white;
+      border:1px solid #e7e7e7;
+      border-radius:16px;
+      padding:20px 18px;
+      text-align:left;
+      transition:0.3s ease;
+      cursor:pointer;
+      min-height:120px;
+    }
+
+    .industry-card:hover{
+      transform:translateY(-5px);
+      border-color:#cc9f53;
+      box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .industry-icon{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:rgba(255,190,11,0.12);
+      border:1px solid rgba(255,190,11,0.25);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:18px;
+      margin-bottom:16px;
+      color:#d89b00;
+    }
+
+ .industry-card h3{
+  font-size:14px;
+  color:#111;
+  font-weight:600;
+  line-height:1.5;
+    }
+      .industry-card p{
+      color:#666;
+      line-height:1.7;
+      font-size:10px;
+   
+    }
+    
+
+    .industry-footer{
+      margin-top:40px;
+      color:#d89b00;
+      font-size:14px;
+      font-weight:500;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      nav{
+        padding:20px 30px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero-title{
+        font-size:55px;
+      }
+
+      .hero-subtitle{
+        font-size:38px;
+      }
+
+      .hero-text{
+        font-size:18px;
+      }
+
+      .about-title,
+      .industries h2{
+        font-size:40px;
+      }
+
+      .stats{
+        gap:30px;
+      }
+
+    }
+
+    
+    button{
+    
+      text-align:center;
+      display:block;
+      margin:0 auto;
+      padding:14px 28px;
+    }
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  width:100%;
+  background:#0b3d91;
+  padding:28px 20px;
+  text-align:center;
+}
+
+.footer p{
+  color:white;
+  font-size:15px;
+  letter-spacing:1px;
+  font-weight:500;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <nav>
+
+      <div class="logo">
+        SUAYA<span></span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#">Nominees</a></li>
+        <li><a href="#">Awards</a></li>
+      </ul>
+
+      <button class="vote-btn">
+        Vote Now
+      </button>
+
+    </nav>
+
+    <div class="hero-content">
+
+      <div class="date-pill">
+        ✨ Upcoming 2026 Awards - Nomination Opens Soon!
+      </div>
+
+      <h1 class="hero-title">
+        Alumni of the Year
+      </h1>
+
+      <h2 class="hero-subtitle">
+        Awards
+      </h2>
+
+      <p class="hero-text">
+        Service to society, dedication to excellence, and commitment to innovation.
+        <br>
+        <span>Giving back to the community</span>
+      </p>
+
+      <div class="hero-buttons">
+
+        <button class="btn btn-primary">
+          Vote Now
+        </button>
+
+        <button class="btn btn-secondary">
+          Get Nominated
+        </button>
+
+      </div>
+
+      
+    <!-- BUTTONS -->
+
+    <div class="hero-buttons">
+
+      <button class="primary-btn">
+        View Winners
+      </button>
+
+      <button class="secondary-btn">
+        Explore SUAYA Circle
+      </button>
+
+    </div>
+
+
+      <!-- COUNTDOWN -->
+
+      <div class="countdown-wrapper">
+
+        <p class="countdown-title">
+          COUNTDOWN TO THE AWARDS
+        </p>
+
+        <div class="countdown">
+
+          <div class="time-box">
+            <h2>00</h2>
+            <p>DAYS</p>
+          </div>
+
+          <div class="time-box">
+            <h2>00</h2>
+            <p>HOURS</p>
+          </div>
+
+          <div class="time-box">
+            <h2>00</h2>
+            <p>MINUTES</p>
+          </div>
+
+          <div class="time-box">
+            <h2>00</h2>
+            <p>SECONDS</p>
+          </div>
+
+        </div>
+
+      </div>
+<div class="impact-strip">
+
+  <div>
+    <h3>20,000+</h3>
+    <span>Alumni</span>
+  </div>
+
+  <div>
+    <h3>30+</h3>
+    <span>Nominees</span>
+  </div>
+
+  <div>
+    <h3>10+</h3>
+    <span>Award Categories</span>
+  </div>
+
+  <div>
+    <h3>50K+</h3>
+    <span>Community Votes</span>
+  </div>
+
+</div>
+    </div>
+
+  </section>
+<!-- =========================
+     WINNERS SECTION
+========================= -->
+
+<section class="winners-section" id="winners">
+
+  <!-- TOP BUTTONS -->
+  <div class="winner-top-buttons">
+
+    <button class="winner-year-btn active">
+      2025 Winners
+    </button>
+
+    <button class="winner-year-btn">
+      2024 Winners
+    </button>
+
+  </div>
+
+  <!-- SECTION TITLE -->
+  <div class="section-badge">
+    ✨ Celebrating Excellence
+  </div>
+
+  <h2 class="winners-title">
+    2025 <span>Winners</span>
+  </h2>
+
+  <p class="winners-text">
+    Meet the outstanding leaders, innovators, and changemakers recognized
+    for their impact, excellence, and service to society.
+  </p>
+
+  <!-- WINNERS GRID -->
+  <div class="winners-grid">
+
+    <!-- CARD 1 -->
+    <div class="winner-card">
+
+      <div class="winner-image">
+        <img src="data:image/jpeg;base64,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" alt="">
+      </div>
+
+      <div class="winner-content">
+        <h3>Collins Munyendo</h3>
+        <p>Research & Innovation</p>
+      </div>
+
+    </div>
+    
+    <!-- CARD 2 -->
+    <div class="winner-card">
+
+      <div class="winner-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR98HHPr4YXBSk1enSq4eh-k5-rWpuyd21FQA&s" alt="">
+      </div>
+
+      <div class="winner-content">
+        <h3>Christine Kahema</h3>
+        <p>Corporate Leadership</p>
+      </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="winner-card">
+
+      <div class="winner-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz2d1W-tq1bgtUyl9iMCMKXwUmlDRH29g8lA&s" alt="">
+      </div>
+
+      <div class="winner-content">
+        <h3>Johnson Kilangi</h3>
+        <p>Alumni of The Year</p>
+      </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="winner-card">
+
+      <div class="winner-image">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUQExIVFRUVFxcXFRUVFxUVFxYVFhUXFxUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGi0mHyUvLTAtLS0rLS0tLS0tLy0tLS0tLS0tLS0tLS0tLy0tLS0tKy0tLS0tLS0tLS0tLS0tLf/AABEIARMAtwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQMEBQYHAgj/xABDEAABAwEEBwUFBgQEBwEAAAABAAIDEQQSITEFBkFRYXGBEyKRobEHMsHR8CNCUnKCkhRiwuFDorLxFSQzU2OT0gj/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAgMEAQUG/8QAKxEAAgIBBAAFAwQDAAAAAAAAAAECEQMEEiExIiNBUXETMmEFM4HBkaHR/9oADAMBAAIRAxEAPwDhyEIQAhCEAIQhACEIQAlAT9gsb5pGxRirnGgHqTwC65qrqbHAAbt+SmLyPJu4KueRRLsWF5Pg5L/w2alexkpvuO+SjvaRgQQeOC+h7XoYhuIp0WU0poeOSrXMB6em5VLO75Re9Iq8MjkKFodYNWnQAyMq6MZ728+Cz60RkmrRklFxdMRCVC6REQlSIASJUIBEIQgBCEIBUIQgBCEqARKhCAEIQgOt+x/V0di+2uGLyWsO5jTQ05uqP0BdIsbmtGAVLqXaI2aOgJN1jYI7xzxLbxoN9SVGZrrBeutBpvdT0WbJ3ZvwrijUWq0lwwbgsjNQymozUnT2tYiYDT3hUVrj4KjOk5XtEt2Klcg8X+RFcFVdl1UqL12hxIKUqCMeO8Lhen9GmzWiWzn7jiB+U4sP7SF9IaId3eO0HYdxXHfbPZg23MeBhJC09Q5wx6XVrgqMGV2YFCEKZSCEIQAkSoQCIQhAIhKUIASoQgBCEIAQhCAEIQgOvez+eWXR7QxnaGN7onA0AaMHB5rhQNI/upbNBz2tx7Ut7jj7jSBcA7p72RJqaCvil9hlqZ/CWmN5wY+8Bwc1uA6g+K0M+m3Ne42eFrzGO429cbfJGLqZ4eqzZHzRvwpuN+xG1m0G1z4mvFWCMNFRgVWP1SJLC2PuMYGtN+rTie85pFA/vEVaaYNwwCbtesWkZ3hggALQaiShAG4XTirCHTM9njBdjh32jZyBz9eaqTafBe4xkuS10BFIH3XOLhS6TWtLtbuOZoMKlYH2s2VrqzlrXOAuXqmrLj46MADqUPbOOIrXgMd5qxpaOW+Rk+l08SDVcz9rU4ZL2DXhxe900hAApT7KNlRnQRur0yor8d0rMubamznqEJaK8xiIQhACEIQAkSoQCIQhAKhCEAIQhACEIQAhAS0QGm1C0qYZnRXromAb+tpqzxq4cyF0nQNmtbC5sJidfdV8j3Frmhx+6MiQMMxWgxC4gDTELqmoGsvbAxynvAAOdscDgHcDv+qVTjzZow5ONp0I6JbdrJaZttRWGNuRzvXjgaZE9VjrRoeN0hkL+0aK0becW130Of1gp9p0RZa3nTPIONBI4DlmmpLXZ2Dsosd9KHxULvhI0NJK2z1oOSkpaGkUy64fXNcq15ju6QtIG2Vzv30d/UunaMtt+YQxNvSPIADccdpPAD6zpF9tWoxiNntsZH2l2GfD/FobkhO4iranK63erYL0MuVnHwlXqWJzHFrgQ4GhBzBXlTKQSUSoQHlCVIgBCEIAQhCAEIQgBCEIAQhKEAqEIArgEB5K3vsc0YbTa5IK0a6F+JFW3muaWg7cr2Sz2jNXnPo+WrG5gbSPgF1H2L2YDSBuNusZZ5K83PiArxz8Fd9CWxyl0FKnwQ9a9VbXZauMLywV77B2jed4CreoCzOrtjtVsk7CzjdedWjWNO1ztg8zTAFd01/1jlgjdHZy0Pw7SQkExh2DbjCKOdUjE4Ab9nDppZmyFxllvON6817w8uJwu0NTXDL/AGqjicjRFtq6O96k6mQaPj7vfmcO/KczvDR91vmdqrfbFbhHo8srjLLEwcmu7R3kwjqpeoZt7bLGbUXSudUkOoJI2k91pcffIGdcanM0WL9tekL9os9nBNI2OkcMsZHXW14gRu/crcUPGkZ5M5rpaGOfFze9kHDA0Gw7+qorRoGUCrRfHDPwPwqtK2zV8VKs8bhWtKdSeeWC2zwwny+yCZz17C00IIO4ih8CvK6PaLKyQUewOHEZcjsVJbdVWnGNxb/K7EeOY81mnpZL7eSVmTQrK0aCtDK/ZFwAqS3vCgzOGPkq1ZnFx7R08oXpIVwCIQhACEIQAhCEAoXqOMuNACSdgSLS6iWMPlkcRUNjIHBzzT0DvFWYsf1JqPucboYsOq8jsZDcG4Yn5BaCx6GZGO60A7zifPNX7GAtDt4B8QmZWL2oabHjVpFbbZXWmu3FdK9idgAZaLRjeLmxDdRrQ84c3jwXOpWLq/sdaBY5d/bur/646LNrH5ZKPZP9olnazR811oqXR4naTMw1ccyufezLRbJtIPvuaRAy81lCC41ug0JOAqf3BbD2r6RAjiswzLu1fQ0oxgIHiT/lXONUNJ/w+lonZB0gidTItk7mdcQHFrv0rFBPYakqx2fQoC+eNdrb/EaQtMlagSGNv5YgI8OBLSf1LvembcIIJZz/AIcbn8y1pIHU0C+bI6k1JqTiTvJzKnpY3bMzHownhsG/PkM/gOqImr1Z8av35flGXjieq3qNkT3dSuICRyZmOQ6nkPoDqrNqQJ+iJ6SAuwBIx3VyBXPtb7E2G2TxMFGh9Q0ZND2h90cBep0W80EWyOdE77+R3FZDXyxuZaO0camQAH88YDHeQYf1FZdZHyk/ZiPZmkFKUi8ssPKEFKgEQhCAEqAlQAt17OYwI5n7S5o6AE/1LCrf6hx0sznb5XeAawfArZoVeZfyRl0aCyYsHAuHg4heJWr1YT743O9QD80/K3Bex6FZWSNXUvY+f+UlG60O844lzKRq6L7H5fs7THuka/8Aeyn9BWHWLyyUezP6+WsSW2XaGAMxyo0d4V2d4uWNtMdx7Zfwua4GtDUG9Uj4q+tcvbTPk2SPc483OJ+ag6ajHYSvOwUGzJhIxwpmfAdM9Ukj04wuP8HTva3b+zsXZA4zPaP0s758w0dVxqBq3ntb0h2lpbCDhCyh/O/vO8gxYqNtBUrRpsdY1/k81vkSbGkY+9735Rn45dTuT5KasjSavObshuaPdHx5kr3IVrS9SIVUOST3jyaOuJ+C9WiTBNAVYOJJ+XkFx+wG7LfDgWnHYnNe5Gz2Zk4Hea8B43OoWv8AE9mUsZ2jMYpdZYQ6JxZ7s7L9B/3YTeIpvLQR1VOZXjkguzn6QoQvFLTyhCEAJQkC9IAQhCAF0jU1v/KRn8569o4fBc3XTtAR3LNG2n3RhxIvHzJW/wDTl5jf4IT6HbNPSWQcAfUH4KfASRUrPMnAtjWfjDm+V7+ladwwoF6cHaIkJ7VpPZ/b+xfax+Kyvk6w5Dwkd4LPyt2qPJaXxhzmZmOSMjYWyxujNeQdXoqssN0Gjq7J1mo2hJoAT4dma5o0qysJbdvNftG6ueG3HnngvFiLnGpaKDCmNRhSnFLbLUAbjQKU73Aj+5WGUdzS9z1lJKL9q/3/AMIelrUZp5JTm97neJJA6KFK2tGdXcq4DqfIFe5JA0FxyCasrTS873nYn4DoKBekl6HkDzyVFlcd9fNPyUG5RJzxXWCNaHd0qSxtY2/lHoq62yUY7kfRWNnPdaNlB6Kq/EdFsrrpoVNttjIjIGLQ9kreFDSQftJP6VAmbQjiMFfaPtLbgvHB2FPUKdXwRORuFMN2HgkTtrhLHvjJqWuc0neWkgnyTS+f6LjyUJShAASoQgBCEIApsXWIRRnj/Zcqh95vMeq6lbHXY+i9P9P6m/j+yEzF6WtRbMJRm0gjofoLdw24Pax7Tg9oI6rnOlTVxWr1ekpDE3+UH92PxV+KTU2jj6NDWqiTtqCDyUhqi2p9012ZH4H63rQcJWipagV2AVxzI97HMCoTdrDRka3jU41+uSbsLfebtB5YOGIrsxCj6atlwEgYnBg4/ILLjhU236GzJk8pL3IU778gYPdZi7i7YOmall25RtHWajccziTxKkSkALUjGRZnKFPLU4Jy0TVwCaY3aVFggaQrcd+U+hVhZZO6OQUXSIqx9B90+ic0VJWg3hU9TOlvG3tGlo94Yt472/Hok0TLeZJCfepfZ+ZuJA5j0UarmOvCooa9VJtbxVlrYKd4do0bHbehFfPcrLOGK07jaJDvId1c0E+qgFT9OCk8gzoQK76NAr5KvK8TJ97+SxAhCFA6CEIQAhCEB7hYS5oGZIA5krpWmn0ZRc+0MytoiH/kb5EH4Lb6efsXp6FVCT+CEuzH6Rd3ludCWRps8Txn2bPENosJa2Fzg0ZkgDmTQLpNlj7JojGQGHx+uK0YV45M4+ga/Ym7Q2oNcapid9SUjbQcnA81buOEOxy0lAeTRjXEnYWihaTyxHPmm4KzymVw7owaDsHzTstldISGNLhm9w3bB4gn9IXkzGl2NvUqEas63wSrRa2swVfJM5/AL2yybXGpXuV4GSsts4RiynNe2x70RAnHenJXXQuAgaUwjfT8J9FB0fIRG120KytEZLcdqpNF6TELi1wvMJNd4xwIWfI0pps6ujWWS0tlbx2hLFEWEtI+zf3XcK5O6HHxUeCzRvAmhdT0O8EbFOpLI0theLzc2GneH8vEK9co4YjWSEstD2nc3xDQ0/6VVlW+shLpGyOzc0B35mEtPldPUqoovFzKskvksXQiEIVR0EIQgBCEICy1bbW0xfmPk0lajT0lSs5qq2tpZwvH/KR8VdaWdiV6mj/afyQl2V2iIr9riGy9e/aC74LoMwqOSw+qrK2qu5jj5tb8Vt6LXgXhbIsbZZxmUkrQeAXt7lGncSKKTpA9aNtxhvdmGkHY8VAcKgOFOZ/sojvPaiPDzXstqkIR7S5Fkd4TLhwU3sl6awDFS2nCL7oqmIoi81OSlOhLzjknyAwJtBWaTNKALOaMszHXi6hdsa40qPieGGaubfLWrjxKrdG6K7UXiaA4nqVlyrdNEl0TWWeYi6xoYDuIA50GZ6qY3RDhiHuDthaSCCpNgsgi7rW4HP8A2VkyNzsGENO/arIYzjZitbIpGmMyYuIcCcr1CDeI3m9jy5qgqr7XFt2ZrDJfIbVxzxcTh4AKgXk6j91lkegQhCoOghCEAIQhAXWqf/XruY4+ik2xxlfStBVRNXG0Mj9zLv7nfJpU+zNqSV6ulXlJfkrl2T9VrrHyuO4Nb5l39K0ZtLTgD0VHoKL7Kuxz3Eg7aG7l+lTHODBWlMRlgBiBWgwWyNxiR9ScSvExoE1G+qbtT64KDZ08NNR1+SI5aYJGHA/W9eXjaFOMvCmCY16UlQGykKSyRTUzg4ZQ0YlV9ptjXYXhRSmgEB10VITMgXHYKLTFpbccBXKmR2qZoEVDRvrlwVXpe1faNBFWA1IV5YC2n2JbdGzJw4O2rJd5L9iXoWzYKZE13nHwUPScpjjeWu79x5G8UBN7onJrUQAa03qC63xOgnw+07KQBx2i6dquk1tdexwwr3EmpNTvKRCF4JaCEIQAhIClQAhCEBe6Fb9i7+Z9OjWj/wCir3sBHESRiRyUPVyzF0UZph3v9RHwUzWF1GXV7mnjtxJ/gqfZ40c6TsWEOGWRGzPAjJOVlf3SwZjG9uNcqJdHNpEwfyt/0hSw6iu2+FHLJLSAFHc6hDqA0NccsN/BDXLyVXLk6NMlPb0uhoc00aHXqEEHMgbzgpZaqHSNquWiA/zEHk6jT6rQkLuBqnH2EiM6NJLMGNLjsTz2qutgLqMHE+Aw86LslRwNGW09mL7HVqd2RJIzO4pye0kgm7hxPyT7LMCBQ48U3Jo9z8C4Nbmdtei5cqo6VdmsfaPJNDgaDZXj9bVOihjvNcWXQcK5OY78LuHHiN4VvY7IyMd3PaTmUfw4q9pGB8wcfiVFYmlyLIz3h14CNpePumorwwVHrNpCRsLYjGyPtL1aYuutu4V2Vr5K4tMNxzHg1LcCeGyvFZHWjSJmmOODBdHxPj6KnUz242vVnYrkqEIQvILAQhCA8pQkSoBUIQgNrqraKQNbT8VP3FeNYHVaUxq6+kQHE+qXTT6jovdxvyF8FL7LGynuN5D0XutVFsbqsbyHopMYV3aOD8eSRASVVbJGY1pPfYNwPqPktbYJu0jY/wDE0HqRj51WN1kNZgNzR5kq71RtX2ZjObDUfldj63vJZ9POs0l7/wBHZLg0AjTf8M2t6mOSkggoovQaIER0a9AKQ5iZooUBWlLLLQ9B8UiS3aLmbHFamku7a9SKnuxMNBLerm5xoBTFV5cscaW71OpWVuktICKN7nYmmA/mOSwBKttYbd2j7g91vm4/LLxVSvJ1WXfOl0iyKoEIQspIEJClQHlLVKhAIhKkKA3fs81fnt7ZGWcNrDdL7zruEhddpga+6Vb6xezzSEcbnmJpABwa6pPIUxUj/wDO+lIobTamSysjvxMLb7mtBLHmoFTiaOXcZdYbGAa2qA8BIxx8ASVpjq5xjt9COy3wfM9ijcxoY8FrmgBzXChBGBBCnMKla2WmN9tnfE68xz6h1CK4CuYBzqoLXYL2Mck4Jr2K2qY8XJQmQU5UAFxyAqVxgyemTWd/Cg8APjVPaHtHZytOw913I/3ool6+S7eST1Kd7PBYUvFuRM21+icZaFV6LtnaRivvNwd8D1+aee8Bblk4tEKLITpia1tbmaKmtFtPutqTuCILMfefidg2D5lPqNnB7SGku6QO6CM9p5bleRa0sEUb5pASyzwMZUCrnBpa4Et/C69UHIVOZqsnbCS7gMSeSzkk5II3mvmvP1lOtxZA82iJzHFrswSDtrxB2g51TaCULz2TBCEIBChIhAekUS0SgIDzRC9kIogLbU2zCS1xggEC8SDjWjTTzIXVpnMF1uArkAuZajTsjtbS80BaWj8xpT0K3+udyCCO0APJL2hpBAaCTjexypUZZkc1ny/cbdP9jZk9Z/sLQG07rxeFN+1erLIHNrVPa/Wfu2e0DeWu64j0VFQtyJFdy9fQZZfTr2Mmpit7L8NUHTVousuDN2B5bfkq7/iEjcA7xTdpJIqTU71s+opcIoqiNFgSORHVS4wDgoEzqEHopUD8QqU6dEidZmljrzeo3p6ZznZYLwSnIFauCI5Y4A3ntKmPcAFGCjzOO9TTIsj6XtFGOA2/QCzStNJzVFOPzVXReZq5bshbDoEIohZSQIQhAeUIQgHKJQkvL0CgFKRerwSGiA9xPLSHDMEHwXXXQM0loujbzpGuY5rA5wFQaODgMKDvYkYYLkQpvVjoXTU1kf2kMhadozaeYVeSG5cdl2HKoOn0zountXhNYQGuJtYcL0NRdZRtXGu3ChDq07wWAZLUfW5aLSmu0Nrs7mSQGOfNkkTu651cbwwNDU4YrLQHEgLXoNytM5qpRk04jojqltYwon424Jm1lepBdmSTKy0FerFJlwwTVqKfiaGtA21qev0FhyTrIWJcFo11QFJaaU5fJQoCpQNXNWyPJBkmMqLK7AqQ05qFI7NWIiyntYxoo9xTJ3g4LzgvFyu5tly6ItxJcUrBKaKB0iXUhapt0JOyG8ICCQlUmSKiEBECVCEAIQhAFUoQhAKCp9idiUqFfp/uOPon1yTFpKEL0Y9FUiptJxSsKELzMn3lqLeznJS2++362FCF6UOkVskbCoMu1CFd6EH2UchxPNeaoQvCNAoKCUIQC3kXihCAQuQhCA//2Q==" alt="">
+      </div>
+
+      <div class="winner-content">
+        <h3>Kenneth Karuri</h3>
+        <p>Entrepreneurship Excellence</p>
+      </div>
+
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="winner-card">
+
+      <div class="winner-image">
+        <img src="data:image/jpeg;base64,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" alt="">
+      </div>
+
+      <div class="winner-content">
+        <h3>Elizabeth Jumah</h3>
+        <p>Community Service</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+  <!-- ABOUT SECTION -->
+
+  <section class="about-section" id="about">
+
+    <div class="section-tag">
+      ✨ About The Awards
+    </div>
+
+    <h2 class="about-title">
+      Recognizing Tomorrow's <span>Leaders Today</span>
+    </h2>
+
+    <p class="about-text">
+      SUAYA Awards celebrates exceptional alumni creating impact,
+      innovation, leadership, and service to society across Africa.
+    </p>
+
+    <div class="about-cards">
+
+      <div class="about-card">
+        <div class="icon-box">🏆</div>
+
+        <h3>Excellence Recognized</h3>
+
+        <p>
+          Honoring outstanding achievements across industries and communities.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="icon-box">📈</div>
+
+        <h3>Rising Leaders</h3>
+
+        <p>
+          Celebrating visionary alumni shaping the future through innovation.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="icon-box">🤝</div>
+
+        <h3>Community Driven</h3>
+
+        <p>
+          Recognizing leaders dedicated to giving back and uplifting society.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="icon-box">🌍</div>
+
+        <h3>Continental Impact</h3>
+
+        <p>
+          Celebrating influence and transformation across Kenya and Africa.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="hero-buttons">
+
+      <button class="btn btn-primary">
+        Learn More
+      </button>
+
+      <button class="btn btn-secondary">
+        Explore Nominees
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- INDUSTRIES SECTION -->
+
+  <section class="industries">
+
+    <div class="section-badge">
+      ✨ All round alumni excellence
+    </div>
+
+    <h2>
+      Categories We <span>Celebrate</span>
+    </h2>
+
+
+    <div class="industry-grid">
+
+      <div class="industry-card">
+        <div class="industry-icon">💻</div>
+        <h3>Public Service</h3>
+            <p>
+            Alumni dedicated to serving the public with integrity, leadership, and a commitment to societal well-being in government or any public office.
+      </p>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">💳</div>
+        <h3>Leadership</h3>
+            <p>
+            Trailblazers in corporate leadership who exemplify ethical leadership, exceptional performance, and industry influence.
+      </p>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">🏢</div>
+        <h3>Research and Innovation</h3>
+            <p>
+            Pioneers in research and innovation driving technological advancements and transformative solutions across industries.
+      </p>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">🩺</div>
+        <h3>Community Service</h3>
+            <p>
+            Alumni making a significant impact through community service, philanthropy, and social initiatives that uplift and empower communities.
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">🎓</div>
+        <h3>Entrepreneurship </h3>   
+            <p>
+            Visionary entrepreneurs who have founded successful ventures, created jobs, and contributed to economic growth and innovation.
+      </div>
+
+
+      <div class="industry-card">
+        <div class="industry-icon">🎨</div>
+        <h3>Sports & Arts  </h3>
+            <p>
+            Alumni excelling in sports and arts, showcasing talent, creativity, and dedication that inspire and enrich society.
+      </div>
+
+    </div>
+
+    <p class="industry-footer">
+  
+    </p>
+
+      </section>
+
+<button class="btn btn-primary">
+      Terms and Conditions
+    </button>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 SUAYA Awards. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

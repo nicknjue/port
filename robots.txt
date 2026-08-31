@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nicknjue.github.io/myWebsitePOS/sitemap.xml
+Sitemap: https://nicknjue.github.io/port/sitemap.xml

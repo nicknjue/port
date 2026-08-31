@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Certified Accountant | Bookkeeping & Accounting</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Comic Sans MS","Comic Sans",cursive;
+    background:#fbfbfb;
+    color:#252525;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid #eeeeee;
+}
+
+.nav-inner{
+    min-height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#c71919;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    font-size:15px;
+    color:#444;
+}
+
+.nav-links a:hover{
+    color:#c71919;
+}
+
+.nav-cta{
+    background:#c71919;
+    color:white !important;
+
+    padding:11px 19px;
+
+    border-radius:999px;
+
+    box-shadow:
+    0 8px 20px rgba(199,25,25,.16);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:720px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:75px 0 90px;
+
+    background:
+
+    radial-gradient(
+        circle at 85% 30%,
+        rgba(199,25,25,.08),
+        transparent 28%
+    ),
+
+    linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fafafa 100%
+    );
+}
+
+.eyebrow{
+
+    display:inline-block;
+
+    color:#c71919;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+}
+
+h1{
+
+    color:#c71919;
+
+    font-size:clamp(
+        42px,
+        5.5vw,
+        72px
+    );
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+    margin-bottom:25px;
+}
+
+.hero-copy{
+
+    font-size:19px;
+
+    color:#555;
+
+    max-width:600px;
+
+    margin-bottom:30px;
+}
+
+.actions{
+
+    display:flex;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 24px;
+
+    border-radius:8px;
+
+    font-weight:800;
+
+    border:1px solid #c71919;
+
+    transition:.25s;
+}
+
+.btn-primary{
+
+    background:#c71919;
+
+    color:white;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+
+    background:#a91414;
+}
+
+.btn-secondary{
+
+    background:white;
+
+    color:#c71919;
+}
+
+.btn-secondary:hover{
+
+    background:#fff5f5;
+}
+
+
+/* =========================
+   LAPTOP VISUAL
+========================= */
+
+.visual{
+
+    position:relative;
+
+    min-height:470px;
+
+    display:grid;
+
+    place-items:center;
+}
+
+.visual-card{
+
+    width:min(520px,100%);
+
+    background:white;
+
+    border:1px solid #e9e9e9;
+
+    border-radius:28px;
+
+    padding:25px;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.10);
+
+    transform:rotate(1deg);
+}
+
+.visual-label{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:13px;
+
+    color:#777;
+
+    margin-bottom:18px;
+}
+
+.visual-label strong{
+    color:#c71919;
+}
+
+.laptop-scene{
+
+    position:relative;
+
+    height:340px;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f8eeee,
+        #f1f1f1
+    );
+}
+
+
+/* LAPTOP */
+
+.laptop{
+
+    position:absolute;
+
+    left:50%;
+
+    top:48%;
+
+    width:270px;
+
+    height:175px;
+
+    transform:
+    translate(-50%,-50%);
+
+    background:#292929;
+
+    border-radius:
+    12px 12px 7px 7px;
+
+    padding:10px;
+
+    box-shadow:
+    0 20px 30px rgba(0,0,0,.2);
+
+    z-index:2;
+}
+
+.screen{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:5px;
+
+    background:white;
+
+    padding:14px;
+}
+
+.screen-top{
+
+    height:8px;
+
+    width:55%;
+
+    background:#c71919;
+
+    border-radius:5px;
+
+    margin-bottom:15px;
+}
+
+.screen-row{
+
+    height:9px;
+
+    background:#e7e7e7;
+
+    border-radius:5px;
+
+    margin:9px 0;
+}
+
+.screen-row.short{
+    width:65%;
+}
+
+.screen-boxes{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:16px;
+}
+
+.screen-box{
+
+    height:42px;
+
+    flex:1;
+
+    background:#f4dddd;
+
+    border-radius:7px;
+}
+
+
+/* LAPTOP BASE */
+
+.base{
+
+    position:absolute;
+
+    left:50%;
+
+    top:71%;
+
+    width:335px;
+
+    height:18px;
+
+    transform:translateX(-50%);
+
+    background:#444;
+
+    border-radius:
+    3px 3px 16px 16px;
+
+    z-index:3;
+}
+
+
+/* HANDS */
+
+.hand{
+
+    position:absolute;
+
+    background:#c98f6e;
+
+    border-radius:
+    55% 45% 45% 50%;
+
+    z-index:4;
+}
+
+.hand.left{
+
+    width:150px;
+
+    height:78px;
+
+    left:3%;
+
+    bottom:28px;
+
+    transform:rotate(-18deg);
+}
+
+.hand.right{
+
+    width:150px;
+
+    height:78px;
+
+    right:3%;
+
+    bottom:28px;
+
+    transform:rotate(18deg);
+}
+
+
+/* FINGERS */
+
+.finger{
+
+    position:absolute;
+
+    width:72px;
+
+    height:19px;
+
+    background:#d7a17e;
+
+    border-radius:15px;
+
+    z-index:5;
+}
+
+.f1{
+
+    left:24%;
+
+    bottom:72px;
+
+    transform:rotate(8deg);
+}
+
+.f2{
+
+    left:39%;
+
+    bottom:60px;
+
+    transform:rotate(3deg);
+}
+
+.f3{
+
+    right:39%;
+
+    bottom:60px;
+
+    transform:rotate(-3deg);
+}
+
+.f4{
+
+    right:24%;
+
+    bottom:72px;
+
+    transform:rotate(-8deg);
+}
+
+
+/* TRUST BADGE */
+
+.trust-badge{
+
+    position:absolute;
+
+    right:-18px;
+
+    top:34px;
+
+    background:white;
+
+    border:1px solid #eee;
+
+    padding:14px 17px;
+
+    border-radius:14px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.10);
+
+    font-size:13px;
+
+    font-weight:800;
+}
+
+.trust-badge span{
+    color:#c71919;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section{
+    padding:95px 0;
+}
+
+.section-heading{
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:
+    0 auto 55px;
+}
+
+.section-tag{
+
+    color:#c71919;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+.section-heading h2{
+
+    font-size:
+    clamp(
+        32px,
+        4vw,
+        48px
+    );
+
+    line-height:1.12;
+
+    margin-bottom:14px;
+}
+
+.section-heading p{
+
+    color:#666;
+
+    font-size:17px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.service{
+
+    background:white;
+
+    border:1px solid #e9e9e9;
+
+    padding:32px;
+
+    border-radius:20px;
+
+    transition:.25s;
+}
+
+.service:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.08);
+}
+
+.service-number{
+
+    color:#c71919;
+
+    font-size:14px;
+
+    font-weight:800;
+}
+
+.service h3{
+
+    font-size:23px;
+
+    margin:
+    12px 0 9px;
+}
+
+.service p{
+    color:#666;
+}
+
+
+/* =========================
+   TRUST SECTION
+========================= */
+
+.trust{
+
+    background:#171717;
+
+    color:white;
+}
+
+.trust-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:55px;
+
+    align-items:center;
+}
+
+.trust h2{
+
+    font-size:
+    clamp(
+        34px,
+        4vw,
+        52px
+    );
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+}
+
+.trust h2 span{
+    color:#e13a3a;
+}
+
+.trust p{
+
+    color:#c8c8c8;
+
+    font-size:17px;
+}
+
+.trust-points{
+
+    display:grid;
+
+    gap:18px;
+}
+
+.point{
+
+    border:
+    1px solid #353535;
+
+    background:#202020;
+
+    padding:22px;
+
+    border-radius:16px;
+}
+
+.point strong{
+
+    display:block;
+
+    color:white;
+
+    margin-bottom:4px;
+}
+
+.point span{
+
+    color:#aaa;
+
+    font-size:14px;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+}
+
+.step{
+
+    border-top:
+    3px solid #c71919;
+
+    padding:
+    22px 8px 0;
+}
+
+.step small{
+
+    color:#c71919;
+
+    font-weight:800;
+}
+
+.step h3{
+
+    margin:
+    8px 0;
+}
+
+.step p{
+
+    color:#666;
+
+    font-size:14px;
+}
+
+
+/* =========================
+   REFERRAL
+========================= */
+
+.referral{
+
+    background:#fff5f5;
+
+    border:
+    1px solid #f0d4d4;
+
+    border-radius:28px;
+
+    padding:60px;
+
+    text-align:center;
+}
+
+.referral h2{
+
+    font-size:42px;
+
+    line-height:1.15;
+
+    margin-bottom:14px;
+}
+
+.referral p{
+
+    max-width:650px;
+
+    margin:
+    0 auto 25px;
+
+    color:#666;
+}
+
+.referral-link{
+
+    display:inline-block;
+
+    padding:12px 18px;
+
+    background:white;
+
+    border:
+    1px dashed #c71919;
+
+    border-radius:8px;
+
+    color:#c71919;
+
+    font-weight:800;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:50px;
+}
+
+.contact h2{
+
+    font-size:45px;
+
+    line-height:1.1;
+
+    margin-bottom:15px;
+}
+
+.contact p{
+    color:#666;
+}
+
+.contact-card{
+
+    background:white;
+
+    border:
+    1px solid #e9e9e9;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    display:grid;
+
+    gap:16px;
+}
+
+.contact-row{
+
+    padding:15px;
+
+    background:#fafafa;
+
+    border-radius:10px;
+}
+
+.contact-row strong{
+
+    display:block;
+
+    color:#c71919;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#111;
+
+    color:#aaa;
+
+    padding:35px 0;
+}
+
+.footer-inner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    align-items:center;
+
+    font-size:14px;
+}
+
+.footer-logo{
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:800;
+}
+
+.footer-logo span{
+    color:#e13a3a;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero,
+    .trust-grid,
+    .contact{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+
+        padding-top:55px;
+    }
+
+    .visual{
+        min-height:390px;
+    }
+
+    .services{
+
+        grid-template-columns:
+        1fr 1fr;
+    }
+
+    .process{
+
+        grid-template-columns:
+        1fr 1fr;
+    }
+
+    .contact{
+        gap:30px;
+    }
+}
+
+
+@media(max-width:560px){
+
+    .services,
+    .process{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+
+        min-height:auto;
+    }
+
+    .visual-card{
+        padding:15px;
+    }
+
+    .laptop-scene{
+        height:300px;
+    }
+
+    .laptop{
+
+        width:225px;
+
+        height:145px;
+    }
+
+    .base{
+        width:285px;
+    }
+
+    .referral{
+
+        padding:
+        35px 20px;
+    }
+
+    .referral h2{
+
+        font-size:32px;
+    }
+
+    .footer-inner{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+<div class="container nav-inner">
+
+<a href="#" class="logo">
+    ACCOUNT<span>PRO</span>
+</a>
+
+<div class="nav-links">
+
+<a href="#services">
+    Services
+</a>
+
+<a href="#about">
+    About
+</a>
+
+<a href="#process">
+    How I Work
+</a>
+
+<a href="#contact">
+    Contact
+</a>
+
+<a href="#contact" class="nav-cta">
+    Book a Consultation
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="container" style="display:contents;">
+
+<div>
+
+<span class="eyebrow">
+    CERTIFIED ACCOUNTANT • BOOKKEEPING TERENCE THE DON
+</span>
+
+<h1>
+
+Clear Books.<br>
+
+Confident Business.
+
+</h1>
+
+<p class="hero-copy">
+
+Professional bookkeeping and accounting support
+for companies that want accurate records,
+better financial visibility and the confidence
+to make informed business decisions.
+
+</p>
+
+
+<div class="actions">
+
+<a
+href="#contact"
+class="btn btn-primary">
+
+Book a Consultation →
+
+</a>
+
+<a
+href="#services"
+class="btn btn-secondary">
+
+Explore Services
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- LAPTOP VISUAL -->
+
+<div class="visual">
+
+<div class="visual-card">
+
+<div class="visual-label">
+
+<span>
+Financial Management
+</span>
+
+<strong>
+Trusted • Accurate
+</strong>
+
+</div>
+
+
+<div class="laptop-scene">
+
+
+<div class="laptop">
+
+<div class="screen">
+
+<div class="screen-top"></div>
+
+<div class="screen-row"></div>
+
+<div class="screen-row short"></div>
+
+
+<div class="screen-boxes">
+
+<div class="screen-box"></div>
+
+<div class="screen-box"></div>
+
+<div class="screen-box"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="base"></div>
+
+
+<div class="hand left"></div>
+
+<div class="hand right"></div>
+
+
+<div class="finger f1"></div>
+
+<div class="finger f2"></div>
+
+<div class="finger f3"></div>
+
+<div class="finger f4"></div>
+
+
+</div>
+
+</div>
+
+
+<div class="trust-badge">
+
+CERTIFIED
+
+<br>
+
+<span>
+ACCOUNTING SUPPORT
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="section-tag">
+    What I Do
+</div>
+
+<h2>
+
+Accounting that keeps
+your business moving.
+
+</h2>
+
+<p>
+
+Reliable financial support designed
+to give business owners cleaner records,
+useful information and more time
+to focus on growth.
+
+</p>
+
+</div>
+
+
+
+<div class="services">
+
+
+<article class="service">
+
+<div class="service-number">
+01
+</div>
+
+<h3>
+Bookkeeping
+</h3>
+
+<p>
+
+Accurate recording and organization
+of your day-to-day financial transactions.
+
+</p>
+
+</article>
+
+
+
+<article class="service">
+
+<div class="service-number">
+02
+</div>
+
+<h3>
+Financial Records
+</h3>
+
+<p>
+
+Structured records that make it easier
+to understand where your business stands.
+
+</p>
+
+</article>
+
+
+
+<article class="service">
+
+<div class="service-number">
+03
+</div>
+
+<h3>
+Accounts Support
+</h3>
+
+<p>
+
+Professional support with reconciliations,
+reports and ongoing accounting tasks.
+
+</p>
+
+</article>
+
+
+
+<article class="service">
+
+<div class="service-number">
+04
+</div>
+
+<h3>
+Monthly Reporting
+</h3>
+
+<p>
+
+Clear financial information to help you
+monitor performance and plan ahead.
+
+</p>
+
+</article>
+
+
+
+<article class="service">
+
+<div class="service-number">
+05
+</div>
+
+<h3>
+Business Setup
+</h3>
+
+<p>
+
+Practical accounting structures for businesses
+building strong financial foundations.
+
+</p>
+
+</article>
+
+
+
+<article class="service">
+
+<div class="service-number">
+06
+</div>
+
+<h3>
+Financial Organization
+</h3>
+
+<p>
+
+Turn scattered financial information
+into an organized system you can trust.
+
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     TRUST
+========================= -->
+
+<section
+class="trust"
+id="about">
+
+<div class="container trust-grid">
+
+
+<div>
+
+<div class="section-tag">
+
+Why Clients Work With Me
+
+</div>
+
+
+<h2>
+
+Your numbers should give you
+
+<span>
+clarity
+</span>
+
+, not confusion.
+
+</h2>
+
+
+<p>
+
+I combine accounting knowledge with
+a practical understanding of business
+operations.
+
+The goal is simple:
+
+accurate records,
+clear communication and
+dependable support you can build
+your business around.
+
+</p>
+
+</div>
+
+
+
+<div class="trust-points">
+
+
+<div class="point">
+
+<strong>
+Professional & Accurate
+</strong>
+
+<span>
+
+Careful handling of financial information
+and bookkeeping records.
+
+</span>
+
+</div>
+
+
+
+<div class="point">
+
+<strong>
+Confidential
+</strong>
+
+<span>
+
+Your financial information is treated
+with discretion and professionalism.
+
+</span>
+
+</div>
+
+
+
+<div class="point">
+
+<strong>
+Business-Focused
+</strong>
+
+<span>
+
+Reports and records organized to help
+you understand your business better.
+
+</span>
+
+</div>
+
+
+
+<div class="point">
+
+<strong>
+Clear Communication
+</strong>
+
+<span>
+
+No unnecessary jargon —
+just clear answers and dependable support.
+
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section id="process">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="section-tag">
+Simple Process
+</div>
+
+<h2>
+
+From financial records
+to financial clarity.
+
+</h2>
+
+<p>
+
+A straightforward process designed
+around your business.
+
+</p>
+
+</div>
+
+
+
+<div class="process">
+
+
+<div class="step">
+
+<small>
+01
+</small>
+
+<h3>
+Understand
+</h3>
+
+<p>
+
+We understand your business,
+current records and accounting needs.
+
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<small>
+02
+</small>
+
+<h3>
+Organize
+</h3>
+
+<p>
+
+Your financial information is structured
+and brought into order.
+
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<small>
+03
+</small>
+
+<h3>
+Maintain
+</h3>
+
+<p>
+
+Records are kept accurate and
+up to date on an ongoing basis.
+
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<small>
+04
+</small>
+
+<h3>
+Report
+</h3>
+
+<p>
+
+You receive useful financial information
+you can use with confidence.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     REFERRAL
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="referral">
+
+
+<div class="section-tag">
+Client Referrals
+</div>
+
+
+<h2>
+
+Know a business that needs
+better bookkeeping?
+
+</h2>
+
+
+<p>
+
+Share this page with a business owner,
+colleague or company that could benefit
+from professional accounting support.
+
+</p>
+
+
+<a
+href="#contact"
+class="referral-link">
+
+Refer a Business →
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="container contact">
+
+
+<div>
+
+<div class="section-tag">
+Let's Talk
+</div>
+
+
+<h2>
+
+Let's get your books
+working for your business.
+
+</h2>
+
+
+<p>
+
+Have questions about your bookkeeping needs?
+
+Get in touch for an initial conversation
+and we can discuss the right support
+for your company.
+
+</p>
+
+</div>
+
+
+
+<div class="contact-card">
+
+
+<div class="contact-row">
+
+<strong>
+EMAIL
+</strong>
+
+hello@example.com
+
+</div>
+
+
+
+<div class="contact-row">
+
+<strong>
+PHONE / WHATSAPP
+</strong>
+
++254 700 000 000
+
+</div>
+
+
+
+<div class="contact-row">
+
+<strong>
+LOCATION
+</strong>
+
+Nairobi, Kenya
+
+</div>
+
+
+
+<a
+class="btn btn-primary"
+href="mailto:hello@example.com">
+
+Request a Consultation →
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container footer-inner">
+
+
+<div class="footer-logo">
+
+ACCOUNT<span>PRO</span>
+
+</div>
+
+
+<div>
+
+© 2026 AccountPro.
+Professional bookkeeping & accounting services.
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

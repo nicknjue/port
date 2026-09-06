@@ -1311,112 +1311,14 @@ nav a:hover {
 }
 
 
-/* 
-/* =========================================================
-   TOOLKIT
-========================================================= */
 
-.toolkit-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-
-.tool-card {
-    min-height: 250px;
-
-    padding: 30px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-    border-radius: 18px;
-
-    background:
-        rgba(10,10,10,.65);
-
-    backdrop-filter:
-        blur(10px);
-
-    transition: .3s;
-}
-
-
-.tool-card:hover {
-    transform:
-        translateY(-5px);
-
-    border-color:
-        rgba(255,255,255,.3);
-}
-
-
-.tool-number {
-    font-family:
-        "DM Mono",
-        monospace;
-
-    font-size: 10px;
-
-    color:
-        rgba(255,255,255,.3);
-}
-
-
-.tool-card h3 {
-    font-size: 24px;
-
-    margin:
-        25px 0;
-}
-
-
-.tools {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-}
-
-
-.tools span {
-    padding:
-        8px 11px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-    border-radius: 50px;
-
-    font-size: 11px;
-
-    color:
-        rgba(255,255,255,.6);
-
-    background:
-        rgba(255,255,255,.04);
-}
-
-
-.exploring {
-    border-color:
-        rgba(117,255,145,.25);
-}
- */
 /* =====================================================
    TOOLKIT / TECHNOLOGY LAB
    ===================================================== */
 
 .toolkit-section {
     position: relative;
-    padding: 100px 10%;
+    padding: 100px 4%;
     overflow: hidden;
 }
 

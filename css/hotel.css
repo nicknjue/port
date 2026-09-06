@@ -1050,7 +1050,7 @@ input {
 }
 
 .video-overlay h2 {
-    font-size: clamp(55px, 8vw, 100px);
+    font-size: clamp(55px, 8vw, 90px);
 
     line-height: .85;
 }

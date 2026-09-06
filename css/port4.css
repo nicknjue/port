@@ -439,9 +439,11 @@ nav a:hover {
 .release-wrapper {
     display: flex;
 
-    justify-content: flex-end;
+    justify-content: right;
+    align-items: right;
 
-    padding-right: 15%;
+    padding-right: 0;
+    margin-top: 15px;
 }
 
 
@@ -470,6 +472,7 @@ nav a:hover {
     cursor: pointer;
 
     transition: .2s;
+    transform:rotate(90deg);
 }
 
 

@@ -64,7 +64,7 @@ button {
         scale(1.1);
 
     animation:
-        backgroundMove 50s linear infinite;
+        backgroundMove 70s linear infinite;
 }
 
 /* INDIVIDUAL IMAGES */
@@ -106,7 +106,7 @@ button {
         saturate(.9);
 
     transition:
-        transform .5s ease;
+        transform .9s ease;
 
 }
 
@@ -397,7 +397,7 @@ nav a:hover {
 
 
 .section-description {
-    width: 300px;
+    width: 200px;
 
     color: rgba(255,255,255,.5);
 
@@ -430,7 +430,7 @@ nav a:hover {
 .hero-content {
     width: 100%;
 
-    max-width: 1100px;
+    max-width: 1200px;
 
     text-align: center;
 }
@@ -731,7 +731,7 @@ nav a:hover {
 
 .hero-stats {
     margin:
-        40px
+        10px
         auto;
 
     display: flex;
@@ -749,7 +749,7 @@ nav a:hover {
 
     align-items: center;
 
-    gap: 30px;
+    gap: 20px;
 
     text-align: left;
 }
